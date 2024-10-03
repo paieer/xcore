@@ -24,9 +24,9 @@ import (
 
 var cmdRun = &base.Command{
 	UsageLine: "{{.Exec}} run [-c config.json] [-confdir dir]",
-	Short:     "Run Xray with config, the default command",
+	Short:     "Run Xcore with config, the default command",
 	Long: `
-Run Xray with config, the default command.
+Run Xcore with config, the default command.
 
 The -config=file, -c=file flags set the config files for 
 Xray. Multiple assign is accepted.
@@ -58,7 +58,7 @@ var (
 	 * main func in this file is run.
 	 */
 	_ = func() bool {
-		cmdRun.Flag.Var(&configFiles, "config", "Config path for Xray.")
+		cmdRun.Flag.Var(&configFiles, "config", "Config path for Xcore.")
 		cmdRun.Flag.Var(&configFiles, "c", "Short alias of -config")
 		cmdRun.Flag.StringVar(&configDir, "confdir", "", "A dir with multiple json config")
 
